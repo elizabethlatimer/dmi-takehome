@@ -10,16 +10,20 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from 'containers/HomePage/Loadable';
-import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import Home from '../Home/Loadable';
+import Nav from '../../components/Nav';
+import AddStringForm from '../AddStringForm';
+import NotFoundPage from '../NotFoundPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
 
 export default function App() {
   return (
     <div>
+      <Nav />
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/new" component={AddStringForm} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
