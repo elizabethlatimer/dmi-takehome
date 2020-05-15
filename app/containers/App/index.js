@@ -8,12 +8,11 @@
  */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Home from '../Home/Loadable';
 import Nav from '../../components/Nav';
 import AddQuoteForm from '../AddQuoteForm';
-import NotFoundPage from '../NotFoundPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
 
@@ -24,7 +23,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/new" component={AddQuoteForm} />
-        <Route component={NotFoundPage} />
+        <Redirect to="/" />
       </Switch>
       <GlobalStyle />
     </div>
