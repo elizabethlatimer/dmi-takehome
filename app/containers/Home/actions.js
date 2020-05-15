@@ -4,10 +4,28 @@
  *
  */
 
-import { DEFAULT_ACTION } from './constants';
+import {
+  LOAD_QUOTES,
+  LOAD_QUOTES_SUCCESS,
+  LOAD_QUOTES_ERROR,
+} from './constants';
 
-export function defaultAction() {
+export function loadQuotes() {
   return {
-    type: DEFAULT_ACTION,
+    type: LOAD_QUOTES,
+  };
+}
+
+export function quotesLoaded(quotes) {
+  return {
+    type: LOAD_QUOTES_SUCCESS,
+    quotes,
+  };
+}
+
+export function quoteLoadingError(error) {
+  return {
+    type: LOAD_QUOTES_ERROR,
+    error,
   };
 }

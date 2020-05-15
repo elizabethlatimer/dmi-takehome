@@ -21,5 +21,28 @@ const makeSelectHome = () =>
     substate => substate,
   );
 
+const makeSelectLoading = () =>
+  createSelector(
+    selectHomeDomain,
+    substate => substate.loading,
+  );
+
+const makeSelectError = () =>
+  createSelector(
+    selectHomeDomain,
+    substate => substate.error,
+  );
+
+const makeSelectQuotes = () =>
+  createSelector(
+    selectHomeDomain,
+    substate => substate.quotes,
+  );
+
 export default makeSelectHome;
-export { selectHomeDomain };
+export {
+  selectHomeDomain,
+  makeSelectError,
+  makeSelectLoading,
+  makeSelectQuotes,
+};
