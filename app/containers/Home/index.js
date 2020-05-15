@@ -19,6 +19,8 @@ import {
 } from '../App/selectors';
 import { loadQuotes } from '../App/actions';
 import saga from './saga';
+
+import Blockquote from '../../components/Blockquote';
 // import messages from './messages';
 
 export function Home({ loading, errors, quotes, onGetQuotes }) {
@@ -37,7 +39,7 @@ export function Home({ loading, errors, quotes, onGetQuotes }) {
         <div>Loading...</div>
       ) : (
         quotes.map(quote => (
-          <blockquote key={quote.id}>{quote.quote}</blockquote>
+          <Blockquote key={quote.id}>{quote.quote}</Blockquote>
         ))
       )}
     </div>

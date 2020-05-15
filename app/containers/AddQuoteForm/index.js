@@ -7,18 +7,21 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
+
 import Input from '../../components/FormInput';
+import Form from '../../components/Form';
+import Label from '../../components/Label';
+import Button from '../../components/Button';
+
 import { sendQuote } from '../App/actions';
 import { setTempQuote } from './actions';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
 
 const INITIAL_FORM_STATE = { quote: '' };
 
@@ -40,12 +43,11 @@ export function AddQuoteForm({ handleSubmit, handleChangeQuote }) {
 
   return (
     <div>
-      <FormattedMessage {...messages.header} />
-      <form onSubmit={submit}>
-        <label htmlFor="quote">Add Your Quote</label>
+      <Form onSubmit={submit}>
+        <Label htmlFor="quote">Add Your Quote</Label>
         <Input name="quote" value={formState.quote} onChange={handleChange} />
-        <button type="submit">Add Quote</button>
-      </form>
+        <Button type="submit">Submit</Button>
+      </Form>
     </div>
   );
 }
