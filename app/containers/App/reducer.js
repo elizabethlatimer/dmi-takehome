@@ -1,6 +1,6 @@
 /*
  *
- * Home reducer
+ * App reducer
  *
  */
 import produce from 'immer';
@@ -8,6 +8,7 @@ import {
   LOAD_QUOTES,
   LOAD_QUOTES_SUCCESS,
   LOAD_QUOTES_ERROR,
+  ADD_NEW_QUOTE,
 } from './constants';
 
 export const initialState = {
@@ -17,7 +18,7 @@ export const initialState = {
 };
 
 /* eslint-disable default-case, no-param-reassign */
-const homeReducer = (state = initialState, action) =>
+const appReducer = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
       case LOAD_QUOTES:
@@ -34,7 +35,11 @@ const homeReducer = (state = initialState, action) =>
         draft.errors = action.error;
         draft.loading = false;
         break;
+
+      case ADD_NEW_QUOTE:
+        draft.quotes = [action.quote, ...state.quotes];
+        break;
     }
   });
 
-export default homeReducer;
+export default appReducer;

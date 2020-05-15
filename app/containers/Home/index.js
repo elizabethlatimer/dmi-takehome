@@ -12,19 +12,16 @@ import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
 import { useInjectSaga } from 'utils/injectSaga';
-import { useInjectReducer } from 'utils/injectReducer';
-import makeSelectHome, {
+import {
   makeSelectError,
   makeSelectLoading,
   makeSelectQuotes,
-} from './selectors';
-import { loadQuotes } from './actions';
-import reducer from './reducer';
+} from '../App/selectors';
+import { loadQuotes } from '../App/actions';
 import saga from './saga';
 // import messages from './messages';
 
 export function Home({ loading, errors, quotes, onGetQuotes }) {
-  useInjectReducer({ key: 'home', reducer });
   useInjectSaga({ key: 'home', saga });
 
   useEffect(() => {
@@ -39,7 +36,9 @@ export function Home({ loading, errors, quotes, onGetQuotes }) {
       {loading ? (
         <div>Loading...</div>
       ) : (
-        quotes.map(quote => <blockquote>{quote}</blockquote>)
+        quotes.map(quote => (
+          <blockquote key={quote.id}>{quote.quote}</blockquote>
+        ))
       )}
     </div>
   );
@@ -53,7 +52,6 @@ Home.propTypes = {
 };
 
 const mapStateToProps = createStructuredSelector({
-  home: makeSelectHome(),
   loading: makeSelectLoading(),
   error: makeSelectError(),
   quotes: makeSelectQuotes(),

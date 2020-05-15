@@ -1,6 +1,6 @@
 /**
  *
- * Tests for Home
+ * Tests for AddQuoteForm
  *
  * @see https://github.com/react-boilerplate/react-boilerplate/tree/master/docs/testing
  *
@@ -11,18 +11,16 @@ import { render } from 'react-testing-library';
 import { IntlProvider } from 'react-intl';
 // import 'jest-dom/extend-expect'; // add some helpful assertions
 
-import { Home } from '../index';
+import { AddQuoteForm } from '../index';
 import { DEFAULT_LOCALE } from '../../../i18n';
 
-const QUOTES = [{ quote: 'This is a test quote', id: 0 }];
-
-describe('<Home />', () => {
+describe('<AddQuoteForm />', () => {
   it('Expect to not log errors in console', () => {
     const spy = jest.spyOn(global.console, 'error');
     const dispatch = jest.fn();
     render(
       <IntlProvider locale={DEFAULT_LOCALE}>
-        <Home dispatch={dispatch} />
+        <AddQuoteForm dispatch={dispatch} />
       </IntlProvider>,
     );
     expect(spy).not.toHaveBeenCalled();
@@ -37,12 +35,12 @@ describe('<Home />', () => {
    *
    * @see {@link https://jestjs.io/docs/en/api#testskipname-fn}
    */
-  it('Should render and match the snapshot', () => {
+  it.skip('Should render and match the snapshot', () => {
     const {
       container: { firstChild },
     } = render(
       <IntlProvider locale={DEFAULT_LOCALE}>
-        <Home quotes={QUOTES} />
+        <AddQuoteForm />
       </IntlProvider>,
     );
     expect(firstChild).toMatchSnapshot();

@@ -1,9 +1,9 @@
 // import produce from 'immer';
-import homeReducer from '../reducer';
+import addQuoteFormReducer from '../reducer';
 // import { someAction } from '../actions';
 
 /* eslint-disable default-case, no-param-reassign */
-describe('homeReducer', () => {
+describe('addQuoteFormReducer', () => {
   let state;
   beforeEach(() => {
     state = {
@@ -13,7 +13,7 @@ describe('homeReducer', () => {
 
   it('returns the initial state', () => {
     const expectedResult = state;
-    expect(homeReducer(undefined, {})).toEqual(expectedResult);
+    expect(addQuoteFormReducer(undefined, {})).toEqual(expectedResult);
   });
 
   /**

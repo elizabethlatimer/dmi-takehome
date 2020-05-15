@@ -1,10 +1,11 @@
 /*
- * AppConstants
- * Each action has a corresponding type, which the reducer knows and picks up on.
- * To avoid weird typos between the reducer and the actions, we save them as
- * constants here. We prefix them with 'yourproject/YourComponent' so we avoid
- * reducers accidentally picking up actions they shouldn't.
  *
- * Follow this format:
- * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
+ * App constants
+ *
  */
+
+export const LOAD_QUOTES = 'app/Home/LOAD_QUOTES';
+export const LOAD_QUOTES_SUCCESS = 'app/Home/LOAD_QUOTES_SUCCESS';
+export const LOAD_QUOTES_ERROR = 'app/Home/LOAD_QUOTES_ERROR';
+export const ADD_NEW_QUOTE = 'app/Home/ADD_NEW_QUOTE';
+export const SEND_QUOTE = 'app/Home/SEND_QUOTE';

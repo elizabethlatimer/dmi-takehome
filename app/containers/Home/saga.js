@@ -4,8 +4,8 @@
 
 import { call, put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
-import { quotesLoaded, quoteLoadingError } from './actions';
-import { LOAD_QUOTES } from './constants';
+import { quotesLoaded, quoteLoadingError } from '../App/actions';
+import { LOAD_QUOTES } from '../App/constants';
 
 /**
  * Github repos request/response handler
