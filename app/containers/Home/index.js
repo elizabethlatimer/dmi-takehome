@@ -21,6 +21,8 @@ import { loadQuotes } from '../App/actions';
 import saga from './saga';
 
 import Blockquote from '../../components/Blockquote';
+import Spinner from '../../components/Spinner';
+
 // import messages from './messages';
 
 export function Home({ loading, errors, quotes, onGetQuotes }) {
@@ -36,7 +38,7 @@ export function Home({ loading, errors, quotes, onGetQuotes }) {
     <div>
       {errors ? <p>Oops, something went wrong.</p> : ''}
       {loading ? (
-        <div>Loading...</div>
+        <Spinner />
       ) : (
         quotes.map(quote => (
           <Blockquote key={quote.id}>{quote.quote}</Blockquote>
@@ -59,7 +61,7 @@ const mapStateToProps = createStructuredSelector({
   quotes: makeSelectQuotes(),
 });
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return {
     onGetQuotes: () => dispatch(loadQuotes()),
   };
