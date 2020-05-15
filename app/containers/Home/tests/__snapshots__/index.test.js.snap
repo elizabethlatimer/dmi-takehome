@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage /> should render and match the snapshot 1`] = `
+<div>
+  
+  <blockquote
+    class="Blockquote-f975vm-0 gRwfUI"
+  >
+    Be yourself; everyone else is already taken.
+  </blockquote>
+  <blockquote
+    class="Blockquote-f975vm-0 gRwfUI"
+  >
+    This above all: to thine own self be true.
+  </blockquote>
+  <blockquote
+    class="Blockquote-f975vm-0 gRwfUI"
+  >
+    If you cannot do great things, do small things in a great way.
+  </blockquote>
+  <blockquote
+    class="Blockquote-f975vm-0 gRwfUI"
+  >
+    Strive not to be a success, but rather to be of value.
+  </blockquote>
+  <blockquote
+    class="Blockquote-f975vm-0 gRwfUI"
+  >
+    Do not let what you cannot do interfere with what you can do.
+  </blockquote>
+</div>
+`;

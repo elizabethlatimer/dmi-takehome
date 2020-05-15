@@ -8,10 +8,11 @@ import styled from 'styled-components';
 
 const Blockquote = styled.blockquote`
   width: 70%;
-  margin: auto;
+  margin: 2em auto;
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
   font-size: 22px;
+  line-height: 1.5em;
 
   border-radius: 3px;
   border: none;
