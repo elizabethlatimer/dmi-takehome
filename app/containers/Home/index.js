@@ -7,7 +7,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
@@ -22,8 +21,6 @@ import saga from './saga';
 
 import Blockquote from '../../components/Blockquote';
 import Spinner from '../../components/Spinner';
-
-// import messages from './messages';
 
 export function Home({ loading, errors, quotes, onGetQuotes }) {
   useInjectSaga({ key: 'home', saga });
